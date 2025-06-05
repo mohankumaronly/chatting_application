@@ -1,11 +1,19 @@
 
 import 'package:chatting_application/constants/appColorConstant.dart';
 import 'package:chatting_application/constants/appStringConstant.dart';
+<<<<<<< HEAD:lib/screens/login_screen.dart
 import 'package:chatting_application/widgets/coustomButton.dart';
 import 'package:chatting_application/widgets/coustomDivider.dart';
 import 'package:chatting_application/widgets/coustomOutlinedButton.dart';
 import 'package:chatting_application/widgets/coustomText.dart';
 import 'package:chatting_application/widgets/coustomTextField.dart';
+=======
+import 'package:chatting_application/widgets/customButton.dart';
+import 'package:chatting_application/widgets/customDivider.dart';
+import 'package:chatting_application/widgets/customOutlinedButton.dart';
+import 'package:chatting_application/widgets/customText.dart';
+import 'package:chatting_application/widgets/customTextField.dart';
+>>>>>>> Rockranger:lib/screens/loginScreen.dart
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
