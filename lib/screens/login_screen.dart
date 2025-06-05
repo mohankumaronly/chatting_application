@@ -1,10 +1,11 @@
+
 import 'package:chatting_application/constants/appColorConstant.dart';
 import 'package:chatting_application/constants/appStringConstant.dart';
-import 'package:chatting_application/widgets/coustomeButton.dart';
-import 'package:chatting_application/widgets/coustomeDivider.dart';
-import 'package:chatting_application/widgets/coustomeOutlinedButton.dart';
-import 'package:chatting_application/widgets/coustomeText.dart';
-import 'package:chatting_application/widgets/coustomeTextField.dart';
+import 'package:chatting_application/widgets/coustomButton.dart';
+import 'package:chatting_application/widgets/coustomDivider.dart';
+import 'package:chatting_application/widgets/coustomOutlinedButton.dart';
+import 'package:chatting_application/widgets/coustomText.dart';
+import 'package:chatting_application/widgets/coustomTextField.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
