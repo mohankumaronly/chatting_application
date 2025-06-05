@@ -1,10 +1,10 @@
-import 'package:chatting_application/constants/color_constant.dart';
-import 'package:chatting_application/constants/string_constant.dart';
-import 'package:chatting_application/widgets/coustome_button.dart';
-import 'package:chatting_application/widgets/coustome_outlined_button.dart';
-import 'package:chatting_application/widgets/coustome_text_field.dart';
-import 'package:chatting_application/widgets/my_text_widget.dart';
-import 'package:chatting_application/widgets/or_divider.dart';
+import 'package:chatting_application/constants/appColorConstant.dart';
+import 'package:chatting_application/constants/appStringConstant.dart';
+import 'package:chatting_application/widgets/coustomeButton.dart';
+import 'package:chatting_application/widgets/coustomeDivider.dart';
+import 'package:chatting_application/widgets/coustomeOutlinedButton.dart';
+import 'package:chatting_application/widgets/coustomeText.dart';
+import 'package:chatting_application/widgets/coustomeTextField.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -188,7 +188,7 @@ CustomOutlinedButton _buildPhoneButton() {
     textAlign: TextAlign.center,
   );
 
-  /// Builds the subtitle widget
+  // Build The 
   Widget _buildSubtitle() => MyTextLabel(
     text: AppStrings.loginIntoYourAccount,
     fontSize: 16,
@@ -196,7 +196,7 @@ CustomOutlinedButton _buildPhoneButton() {
     textAlign: TextAlign.center,
   );
 
-  /// Builds the email label widget
+  // Build Email Text Above The Text Filed
   Widget _buildEmailText() => MyTextLabel(
     text: AppStrings.titleEmailText,
     fontSize: 14,
