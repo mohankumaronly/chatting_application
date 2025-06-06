@@ -7,4 +7,5 @@ class AppStrings{
   static const String passwordText = 'Enter Your Password';
   static const String forgotPassword = 'Forgot Password?';
   static const String loginTextButton = 'Login';
+  static const String madeByRockRanger = 'Made by RockRanger ❤️';
 }

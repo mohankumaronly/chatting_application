@@ -1,5 +1,5 @@
 import 'package:chatting_application/constants/appColorConstant.dart';
-import 'package:chatting_application/screens/loginScreen.dart';
+import 'package:chatting_application/screens/splashScreen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primary),
       ),
-      home: LoginScreen(),
+      home: SplashScreen(),
     );
   }
 }

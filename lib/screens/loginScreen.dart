@@ -24,43 +24,45 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       backgroundColor: AppColors.backgroundColor,
       body: SafeArea(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SingleChildScrollView(
-              padding: const EdgeInsets.symmetric(horizontal: 24.0),
-              child: Form(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    _buildWelcomeTitle(),
-                    SizedBox(height: 8),
-                    _buildSubtitle(),
-                    SizedBox(height: 60),
-                    _buildEmailText(),
-                    SizedBox(height: 8),
-                    _buildEmailTextField(),
-                    SizedBox(height: 20),
-                    _buildPasswordText(),
-                    SizedBox(height: 8),
-                    _buildPasswordTextFiled(),
-                    SizedBox(height: 8),
-                    _buildForgotPasswordText(),
-                    SizedBox(height: 20),
-                    _buildLoginButton(),
-                    SizedBox(height: 30),
-                    OrDivider(),
-                    SizedBox(height: 30),
-                    _buildGoogleButton(),
-                    SizedBox(height: 15),
-                    _buildPhoneButton(),
-                    SizedBox(height: 30),
-                    _buildSignInTextButton(),
-                  ],
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(25.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Form(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      _buildWelcomeTitle(),
+                      SizedBox(height: 8),
+                      _buildSubtitle(),
+                      SizedBox(height: 60),
+                      _buildEmailText(),
+                      SizedBox(height: 8),
+                      _buildEmailTextField(),
+                      SizedBox(height: 20),
+                      _buildPasswordText(),
+                      SizedBox(height: 8),
+                      _buildPasswordTextFiled(),
+                      SizedBox(height: 8),
+                      _buildForgotPasswordText(),
+                      SizedBox(height: 20),
+                      _buildLoginButton(),
+                      SizedBox(height: 30),
+                      OrDivider(),
+                      SizedBox(height: 30),
+                      _buildGoogleButton(),
+                      SizedBox(height: 15),
+                      _buildPhoneButton(),
+                      SizedBox(height: 30),
+                      _buildSignInTextButton(),
+                    ],
+                  ),
                 ),
-              ),
+              ],
             ),
-          ],
+          ),
         ),
       ),
     );
@@ -108,31 +110,30 @@ class _LoginScreenState extends State<LoginScreen> {
     return CustomButton(label: AppStrings.loginTextButton, onPressed: () {});
   }
 
-CustomOutlinedButton _buildPhoneButton() {
-  return CustomOutlinedButton(
-    text: 'Continue with Phone Number',
-    iconData: Icons.phone,
-    onPressed: () {
-      showDialog(
-        context: context,
-        builder: (context) => AlertDialog(
-          title: const Text("Feature Not Available"),
-          content: const Text(
-            "This method is not available yet. The application is still under development.\n\n"
-            "For contact: mohankumaronly81@gmail.com",
-          ),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.of(context).pop(),
-              child: const Text("OK"),
+  CustomOutlinedButton _buildPhoneButton() {
+    return CustomOutlinedButton(
+      text: 'Continue with Phone Number',
+      iconData: Icons.phone,
+      onPressed: () {
+        showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+            title: const Text("Feature Not Available"),
+            content: const Text(
+              "This method is not available yet. The application is still under development.\n\n"
+              "For contact: mohankumaronly81@gmail.com",
             ),
-          ],
-        ),
-      );
-    },
-  );
-}
-
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.of(context).pop(),
+                child: const Text("OK"),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
 
   CustomOutlinedButton _buildGoogleButton() {
     return CustomOutlinedButton(
@@ -188,7 +189,7 @@ CustomOutlinedButton _buildPhoneButton() {
     textAlign: TextAlign.center,
   );
 
-  // Build The 
+  // Build The
   Widget _buildSubtitle() => MyTextLabel(
     text: AppStrings.loginIntoYourAccount,
     fontSize: 16,
