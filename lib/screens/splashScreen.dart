@@ -33,7 +33,7 @@ class _SplashScreenState extends State<SplashScreen> {
           Expanded(
             child: Center(
               child: Lottie.asset(
-                'assets/animations/splashAnimation.json',
+                AppStrings.splashScreenAnimationPath,
                 width: 250,
                 height: 250,
                 fit: BoxFit.contain,

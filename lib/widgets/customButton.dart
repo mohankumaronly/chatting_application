@@ -1,3 +1,11 @@
+// label – (String) The text to display on the button. (Required)
+// onPressed – (VoidCallback) The function to execute when the button is tapped. (Required)
+// backgroundColor – (Color) The background color of the button. (Optional, defaults to AppColors.primary)
+// fontSize – (double) The size of the button text. (Optional, default is 16)
+// verticalPadding – (double) The vertical padding inside the button. (Optional, default is 16)
+// borderRadius – (double) The roundness of the button corners. (Optional, default is 12)
+
+
 
 import 'package:chatting_application/constants/appColorConstant.dart';
 import 'package:flutter/material.dart';

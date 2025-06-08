@@ -1,3 +1,4 @@
+import 'package:chatting_application/constants/appStringConstant.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -12,7 +13,7 @@ class OrDivider extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 12),
           child: Text(
-            'OR',
+            AppStrings.orText,
             style: GoogleFonts.poppins(
               color: Colors.grey[600],
               fontWeight: FontWeight.w500,

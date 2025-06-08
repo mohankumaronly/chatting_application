@@ -1,3 +1,12 @@
+// controller – (TextEditingController) Controls the text being edited. (Required)
+// hintText – (String) Placeholder text displayed inside the text field when it is empty. (Required)
+// obscureText – (bool) Determines if the text should be obscured (e.g., for passwords). Defaults to false. (Optional)
+// validator – (String? Function(String?)?) Validation logic for form input. Returns an error string if validation fails. (Optional)
+// keyboardType – (TextInputType) Specifies the type of keyboard to use (e.g., text, email, number). Defaults to TextInputType.text. (Optional)
+// prefixIcon – (IconData) Icon displayed at the start of the input field. (Required)
+// suffixIcon – (Widget?) An optional widget displayed at the end of the input field (e.g., visibility toggle icon). (Optional)
+
+
 import 'package:chatting_application/constants/appColorConstant.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';

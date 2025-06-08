@@ -1,3 +1,10 @@
+// text – (String) The button label text. (Required)
+// onPressed – (VoidCallback) The function to be called when the button is pressed. (Required)
+// svgPath – (String?) Path to the SVG asset to be used as the icon. (Optional, but either this or iconData is required)
+// iconData – (IconData?) Flutter icon to display if no SVG is used. (Optional, but either this or svgPath is required)
+// iconColor – (Color?) Color of the iconData icon. Defaults to Colors.grey[800] if not provided. (Optional)
+
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -5,8 +12,8 @@ import 'package:google_fonts/google_fonts.dart';
 class CustomOutlinedButton extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
-  final String? svgPath; // For SVG icon
-  final IconData? iconData; // For regular Flutter icons
+  final String? svgPath;
+  final IconData? iconData; 
   final Color? iconColor;
 
   const CustomOutlinedButton({
@@ -16,8 +23,10 @@ class CustomOutlinedButton extends StatelessWidget {
     this.svgPath,
     this.iconData,
     this.iconColor,
-  }) : assert(svgPath != null || iconData != null,
-              'Either svgPath or iconData must be provided');
+  }) : assert(
+         svgPath != null || iconData != null,
+         'Either svgPath or iconData must be provided',
+       );
 
   @override
   Widget build(BuildContext context) {
@@ -43,9 +52,7 @@ class CustomOutlinedButton extends StatelessWidget {
       onPressed: onPressed,
       style: OutlinedButton.styleFrom(
         padding: const EdgeInsets.symmetric(vertical: 16),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
         side: const BorderSide(color: Colors.grey),
       ),
       child: Row(

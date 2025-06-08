@@ -73,7 +73,7 @@ class _LoginScreenState extends State<LoginScreen> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         MyTextLabel(
-          text: "Don't have an account? ",
+          text: AppStrings.dontHaveAccount,
           fontSize: 14,
           color: AppColors.grey800,
           fontWeight: FontWeight.w500,
@@ -81,7 +81,7 @@ class _LoginScreenState extends State<LoginScreen> {
         GestureDetector(
           onTap: () {},
           child: MyTextLabel(
-            text: "Sign In",
+            text: AppStrings.signInText,
             fontSize: 16,
             color: AppColors.primary,
             fontWeight: FontWeight.bold,
@@ -112,21 +112,20 @@ class _LoginScreenState extends State<LoginScreen> {
 
   CustomOutlinedButton _buildPhoneButton() {
     return CustomOutlinedButton(
-      text: 'Continue with Phone Number',
+      text: AppStrings.continueWithPhoneNumber,
       iconData: Icons.phone,
       onPressed: () {
         showDialog(
           context: context,
           builder: (context) => AlertDialog(
-            title: const Text("Feature Not Available"),
+            title: const Text(AppStrings.featureIsNotAvailable),
             content: const Text(
-              "This method is not available yet. The application is still under development.\n\n"
-              "For contact: mohankumaronly81@gmail.com",
+              AppStrings.messageForNotAvailable,
             ),
             actions: [
               TextButton(
                 onPressed: () => Navigator.of(context).pop(),
-                child: const Text("OK"),
+                child: const Text(AppStrings.okString),
               ),
             ],
           ),
@@ -137,8 +136,8 @@ class _LoginScreenState extends State<LoginScreen> {
 
   CustomOutlinedButton _buildGoogleButton() {
     return CustomOutlinedButton(
-      text: 'Continue with Google',
-      svgPath: 'assets/icons/google.svg',
+      text: AppStrings.continueWithGoogle,
+      svgPath: AppStrings.googleSvgPath,
       onPressed: () {},
     );
   }
@@ -180,16 +179,14 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  /// Builds the welcome title text widget
   Widget _buildWelcomeTitle() => MyTextLabel(
     text: AppStrings.welcomeText,
-    fontSize: 28,
+    fontSize: 30,
     fontWeight: FontWeight.bold,
     color: AppColors.primary,
     textAlign: TextAlign.center,
   );
 
-  // Build The
   Widget _buildSubtitle() => MyTextLabel(
     text: AppStrings.loginIntoYourAccount,
     fontSize: 16,
@@ -197,7 +194,6 @@ class _LoginScreenState extends State<LoginScreen> {
     textAlign: TextAlign.center,
   );
 
-  // Build Email Text Above The Text Filed
   Widget _buildEmailText() => MyTextLabel(
     text: AppStrings.titleEmailText,
     fontSize: 14,
@@ -205,3 +201,5 @@ class _LoginScreenState extends State<LoginScreen> {
     fontWeight: FontWeight.w500,
   );
 }
+
+
