@@ -1,4 +1,4 @@
-import 'package:chatting_application/screens/singUpScreen.dart';
+import 'package:chatting_application/screens/loginScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:chatting_application/constants/appColorConstant.dart';
 import 'package:chatting_application/constants/appStringConstant.dart';
@@ -8,17 +8,22 @@ import 'package:chatting_application/widgets/customOutlinedButton.dart';
 import 'package:chatting_application/widgets/customText.dart';
 import 'package:chatting_application/widgets/customTextField.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class SingUpScreen extends StatefulWidget {
+  const SingUpScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<SingUpScreen> createState() => _SinginscreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _SinginscreenState extends State<SingUpScreen> {
   TextEditingController emailTextEditingController = TextEditingController();
-  TextEditingController passwordTextEditingController = TextEditingController();
-  bool _obscurePassword = true;
+  TextEditingController passwordTextEditingController1 =
+      TextEditingController();
+  TextEditingController passwordTextEditingController2 =
+      TextEditingController();
+  TextEditingController userNameTextEditingController = TextEditingController();
+  bool _obscurePassword1 = true;
+  bool _obscurePassword2 = true;
 
   @override
   Widget build(BuildContext context) {
@@ -38,17 +43,23 @@ class _LoginScreenState extends State<LoginScreen> {
                       _buildWelcomeTitle(),
                       SizedBox(height: 8),
                       _buildSubtitle(),
-                      SizedBox(height: 60),
+                      SizedBox(height: 30),
+                      _buildUserNameTextLabel(),
+                      SizedBox(height: 8),
+                      _buildUserNameTextField(),
+                      SizedBox(height: 20),
                       _buildEmailText(),
                       SizedBox(height: 8),
                       _buildEmailTextField(),
                       SizedBox(height: 20),
                       _buildPasswordText(),
                       SizedBox(height: 8),
-                      _buildPasswordTextFiled(),
-                      SizedBox(height: 8),
-                      _buildForgotPasswordText(),
+                      _buildPasswordTextFiled1(),
                       SizedBox(height: 20),
+                      _buildPasswordText(),
+                      SizedBox(height: 8),
+                      _buildPasswordTextFiled2(),
+                      SizedBox(height: 30),
                       _buildLoginButton(),
                       SizedBox(height: 30),
                       OrDivider(),
@@ -69,22 +80,42 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
+  MyTextLabel _buildUserNameTextLabel() {
+    return MyTextLabel(
+      text: 'Full Name',
+      fontSize: 14,
+      color: AppColors.grey800,
+      fontWeight: FontWeight.w500,
+    );
+  }
+
+  CustomTextField _buildUserNameTextField() {
+    return CustomTextField(
+      controller: userNameTextEditingController,
+      hintText: 'Enter your full name',
+      prefixIcon: Icons.person_2_outlined,
+    );
+  }
+
   Row _buildSignInTextButton() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         MyTextLabel(
-          text: AppStrings.dontHaveAccount,
+          text: 'Already have an account? ',
           fontSize: 14,
           color: AppColors.grey800,
           fontWeight: FontWeight.w500,
         ),
         GestureDetector(
           onTap: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => SingUpScreen()));
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => LoginScreen()),
+            );
           },
           child: MyTextLabel(
-            text: AppStrings.signInText,
+            text: 'Login',
             fontSize: 16,
             color: AppColors.primary,
             fontWeight: FontWeight.bold,
@@ -94,23 +125,8 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  Align _buildForgotPasswordText() {
-    return Align(
-      alignment: Alignment.centerRight,
-      child: TextButton(
-        onPressed: () {},
-        child: MyTextLabel(
-          text: AppStrings.forgotPassword,
-          fontSize: 14,
-          color: AppColors.primary,
-          fontWeight: FontWeight.w500,
-        ),
-      ),
-    );
-  }
-
   CustomButton _buildLoginButton() {
-    return CustomButton(label: AppStrings.loginTextButton, onPressed: () {});
+    return CustomButton(label: 'Sign Up', onPressed: () {});
   }
 
   CustomOutlinedButton _buildPhoneButton() {
@@ -122,9 +138,7 @@ class _LoginScreenState extends State<LoginScreen> {
           context: context,
           builder: (context) => AlertDialog(
             title: const Text(AppStrings.featureIsNotAvailable),
-            content: const Text(
-              AppStrings.messageForNotAvailable,
-            ),
+            content: const Text(AppStrings.messageForNotAvailable),
             actions: [
               TextButton(
                 onPressed: () => Navigator.of(context).pop(),
@@ -152,22 +166,44 @@ class _LoginScreenState extends State<LoginScreen> {
     fontWeight: FontWeight.w500,
   );
 
-  CustomTextField _buildPasswordTextFiled() {
+  CustomTextField _buildPasswordTextFiled1() {
     return CustomTextField(
-      controller: passwordTextEditingController,
-      hintText: AppStrings.passwordText,
+      controller: passwordTextEditingController1,
+      hintText: 'Enter your password (min 6 chars)',
       prefixIcon: Icons.lock_outline,
-      obscureText: _obscurePassword,
+      obscureText: _obscurePassword1,
       suffixIcon: IconButton(
         icon: Icon(
-          _obscurePassword
+          _obscurePassword1
               ? Icons.visibility_outlined
               : Icons.visibility_off_outlined,
           color: Colors.grey,
         ),
         onPressed: () {
           setState(() {
-            _obscurePassword = !_obscurePassword;
+            _obscurePassword1 = !_obscurePassword1;
+          });
+        },
+      ),
+    );
+  }
+
+  CustomTextField _buildPasswordTextFiled2() {
+    return CustomTextField(
+      controller: passwordTextEditingController2,
+      hintText: 'Enter your password (min 6 chars)',
+      prefixIcon: Icons.lock_outline,
+      obscureText: _obscurePassword2,
+      suffixIcon: IconButton(
+        icon: Icon(
+          _obscurePassword2
+              ? Icons.visibility_outlined
+              : Icons.visibility_off_outlined,
+          color: Colors.grey,
+        ),
+        onPressed: () {
+          setState(() {
+            _obscurePassword2 = !_obscurePassword2;
           });
         },
       ),
@@ -183,7 +219,7 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   Widget _buildWelcomeTitle() => MyTextLabel(
-    text: AppStrings.welcomeText,
+    text: 'Create Account',
     fontSize: 30,
     fontWeight: FontWeight.bold,
     color: AppColors.primary,
@@ -191,7 +227,7 @@ class _LoginScreenState extends State<LoginScreen> {
   );
 
   Widget _buildSubtitle() => MyTextLabel(
-    text: AppStrings.loginIntoYourAccount,
+    text: 'Join us to get started',
     fontSize: 16,
     color: AppColors.grey500,
     textAlign: TextAlign.center,
@@ -204,5 +240,3 @@ class _LoginScreenState extends State<LoginScreen> {
     fontWeight: FontWeight.w500,
   );
 }
-
-
