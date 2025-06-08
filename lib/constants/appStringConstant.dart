@@ -18,8 +18,4 @@ class AppStrings{
   static const String okString = 'OK';
   static const String signInText = 'Sign In';
   static const String orText = 'OR';
-
-
-
-
 }
