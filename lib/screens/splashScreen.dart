@@ -41,8 +41,8 @@ class _SplashScreenState extends State<SplashScreen> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(bottom: 20.0),
-            child:  _buildMadeByRockRangerText()
+            padding: const EdgeInsets.only(bottom: 30.0),
+            child: _buildMadeByRockRangerText(),
           ),
         ],
       ),
@@ -51,10 +51,10 @@ class _SplashScreenState extends State<SplashScreen> {
 
   MyTextLabel _buildMadeByRockRangerText() {
     return MyTextLabel(
-            text: AppStrings.madeByRockRanger,
-            fontSize: 18,
-            fontWeight: FontWeight.bold,
-            color: AppColors.grey800,
-          );
+      text: AppStrings.madeByRockRanger,
+      fontSize: 18,
+      fontWeight: FontWeight.bold,
+      color: AppColors.grey800,
+    );
   }
 }
